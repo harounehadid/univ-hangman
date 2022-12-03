@@ -21,3 +21,9 @@
   height: 60px;
   font-size: 2em;
 }
+
+.App .correct-word {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

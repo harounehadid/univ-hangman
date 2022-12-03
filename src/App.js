@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import LetterGuessed from './components/letter-guessed/LetterGuessed';
 import './App.css';
 
 function App() {
@@ -7,21 +7,17 @@ function App() {
                     'O', 'P', 'Q', 'R', 'S', 'T', 'U', 
                     'V', 'W', 'X', 'Y', 'Z'];
 
-  let wordToGuess = 'ALILO';
+  let wordToGuess = [...'ALILO'];
   
   return (
     <div className="App">
       <p className='counter'>6</p>
       <p className='guess-word'>elephant</p>
-      <p className='correct-word'>
+      <div className='correct-word'>
         {
-          wordToGuess.map((letter, key) => {
-            <div>
-              <p></p>
-            </div>
-          })
+          wordToGuess.map((letter, key) => <LetterGuessed key={key} letterHolded={letter} />)
         }
-      </p>
+      </div>
       <div className='letter-container'>
         {
           letters.map((letter, key) => <button key={key} className='letter-container-items'>{letter}</button>)
