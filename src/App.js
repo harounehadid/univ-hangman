@@ -2,22 +2,31 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  let letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 
+                    'H', 'I', 'J', 'K', 'L', 'M', 'N', 
+                    'O', 'P', 'Q', 'R', 'S', 'T', 'U', 
+                    'V', 'W', 'X', 'Y', 'Z'];
+
+  let wordToGuess = 'ALILO';
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p className='counter'>6</p>
+      <p className='guess-word'>elephant</p>
+      <p className='correct-word'>
+        {
+          wordToGuess.map((letter, key) => {
+            <div>
+              <p></p>
+            </div>
+          })
+        }
+      </p>
+      <div className='letter-container'>
+        {
+          letters.map((letter, key) => <button key={key} className='letter-container-items'>{letter}</button>)
+        }
+      </div>
     </div>
   );
 }
