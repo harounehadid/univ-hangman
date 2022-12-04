@@ -1,3 +1,4 @@
+/* || --------------------- General rules ------------------------- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,4 +21,12 @@ button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+/* || -------------------- */
+:root {
+  --blue-pen: #3D6AF2;
+  --red-pen: #F20519;
+  --green-pen1: #04BF55;
+
 }

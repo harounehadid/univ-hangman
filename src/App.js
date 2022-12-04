@@ -7,12 +7,12 @@ function App() {
                     'O', 'P', 'Q', 'R', 'S', 'T', 'U', 
                     'V', 'W', 'X', 'Y', 'Z'];
 
-  let wordToGuess = [...'ALILO'];
+  let wordToGuess = [...'TIGER'];
   
   return (
     <div className="App">
       <p className='counter'>6</p>
-      <p className='guess-word'>elephant</p>
+      <p className='guess-word'>animals</p>
       <div className='correct-word'>
         {
           wordToGuess.map((letter, key) => <LetterGuessed key={key} letterHolded={letter} />)
