@@ -1,17 +1,18 @@
-import LetterGuessed from './components/letter-guessed/LetterGuessed';
 import './App.css';
+import LetterGuessed from './components/letter-guessed/LetterGuessed';
+import LetterButton from './components/letter-button/LetterButton';
 
 function App() {
   let letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 
-                    'H', 'I', 'J', 'K', 'L', 'M', 'N', 
-                    'O', 'P', 'Q', 'R', 'S', 'T', 'U', 
-                    'V', 'W', 'X', 'Y', 'Z'];
+                 'H', 'I', 'J', 'K', 'L', 'M', 'N', 
+                 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 
+                 'V', 'W', 'X', 'Y', 'Z'];
 
   let wordToGuess = [...'TIGER'];
   
   return (
     <div className="App">
-      <p className='counter'>6</p>
+      <p className='counter'>7</p>
       <p className='guess-word'>animals</p>
       <div className='correct-word'>
         {
@@ -20,7 +21,7 @@ function App() {
       </div>
       <div className='letter-container'>
         {
-          letters.map((letter, key) => <button key={key} className='letter-container-items'>{letter}</button>)
+          letters.map((letter, key) => <LetterButton key={key} letter={letter} word={wordToGuess} />)
         }
       </div>
     </div>

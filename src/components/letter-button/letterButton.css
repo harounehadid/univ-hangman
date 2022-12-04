@@ -1,0 +1,21 @@
+.ltrBtn {
+    position: relative;
+    width: 12%;
+    height: 60px;
+    font-size: 2em;
+    margin-bottom: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.ltrBtn .correct {
+    position: absolute;
+    bottom: 10%;
+    left: 1%;
+}
+
+.ltrBtn .wrong {
+    position: absolute;
+    bottom: 30%;
+    left: 18%;
+}
