@@ -6,22 +6,3 @@
   align-items: center;
   justify-content: center;
 }
-
-.App .letter-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2%;
-  max-width: 1500px;
-  justify-items: center;
-  justify-content: center;
-}
-
-.App .letter-container-items {
-
-}
-
-.App .correct-word {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
