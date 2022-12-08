@@ -1,17 +1,24 @@
 import styles from './keyboardKey.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Images } from "../resource-manager/ResourceManager";
-import { useDispatch } from 'react-redux';
-import { decrementCounter, reset } from '../counter/counterSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { decrementCounter } from '../counter/counterSlice';
 
 const KeyboardKey = props => {
     let { letter, 
           word, 
           lettersToDisplay, 
-          setLettersToDisplay } = props;
+          setLettersToDisplay, 
+          resetGame } = props;
 
-    // const counter = useSelector(state => state.counter);
+    const resetGameState = useSelector(state => state.resetGame);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (resetGameState.reset) {
+            resetIndicators();
+        }
+    }, [resetGameState.reset]);
 
     let [correctIndicator, setCorrectIndicator] = useState(false);
     let [wrongIndicator, setWrongIndicator] = useState(false);

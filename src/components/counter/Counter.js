@@ -1,7 +1,11 @@
 import { useSelector } from "react-redux";
 
 const Counter = props => {
-    const counter = useSelector(state => state.counter)
+    const { setLost } = props;
+
+    const counter = useSelector(state => state.counter);
+
+    // if (counter.counter === 0) setLost(true);
 
     return (
         <>

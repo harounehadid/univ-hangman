@@ -3,17 +3,21 @@ import { useState } from 'react';
 import Keyboard from './components/keyboard/Keyboard';
 import LetterGuessedContainer from './components/letter-guessed-container/LetterGuessedContainer';
 import Counter from './components/counter/Counter';
+import { useSelector, useDispatch } from 'react-redux';
+import { setResetGame } from './store/resetGameSlice';
 
 function App() {
   const [theme, setTheme] = useState('animals');
   const [wordToGuess, setWordToGuess] = useState([...'TIGER']);
   const [lettersToDisplay, setLettersToDisplay] = useState([]);
   const [lost, setLost] = useState(false);
-  const [resetGame, setResetGame] = useState(false);
+
+  const sliceState = useSelector(state => state.resetGame);
+  const dispatch = useDispatch();
 
   const reset = () => {
     setLettersToDisplay([]);
-    setLost(false);
+    dispatch(setResetGame());
   }
   
   return (
@@ -27,7 +31,7 @@ function App() {
                 lettersToDisplay={lettersToDisplay} 
                 setLettersToDisplay={setLettersToDisplay}
                 />
-      {lost && <button onClick={reset}>Reset</button>}
+      {true && <button onClick={reset}>Reset</button>}
     </div>
   );
 }
