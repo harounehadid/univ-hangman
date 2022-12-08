@@ -1,7 +1,9 @@
 import KeyboardKey from "../keyboard-key/KeyboardKey";
 
 const Keyboard = props => {
-    let { wordToGuess, lettersToDisplay, setLettersToDisplay } = props;
+    let { wordToGuess, 
+          lettersToDisplay, 
+          setLettersToDisplay } = props;
 
     let styles = {
         display: "flex",
@@ -25,7 +27,7 @@ const Keyboard = props => {
                                                           word={wordToGuess}
                                                           lettersToDisplay={lettersToDisplay}
                                                           setLettersToDisplay={setLettersToDisplay}
-                                                           />)
+                                                          />)
             }
         </div>
     );

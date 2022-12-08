@@ -1,9 +1,17 @@
 import styles from './keyboardKey.module.css';
 import { useState } from 'react';
 import { Images } from "../resource-manager/ResourceManager";
+import { useDispatch } from 'react-redux';
+import { decrementCounter, reset } from '../counter/counterSlice';
 
 const KeyboardKey = props => {
-    let { letter, word, lettersToDisplay, setLettersToDisplay } = props;
+    let { letter, 
+          word, 
+          lettersToDisplay, 
+          setLettersToDisplay } = props;
+
+    // const counter = useSelector(state => state.counter);
+    const dispatch = useDispatch();
 
     let [correctIndicator, setCorrectIndicator] = useState(false);
     let [wrongIndicator, setWrongIndicator] = useState(false);
@@ -16,7 +24,10 @@ const KeyboardKey = props => {
             }
         }
         else {
-            if (!wrongIndicator) setWrongIndicator(true);
+            if (!wrongIndicator) {
+                dispatch(decrementCounter());
+                setWrongIndicator(true);
+            }
         }
     }
 
