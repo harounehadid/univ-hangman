@@ -1,14 +1,23 @@
 import './App.css';
+import { useState } from 'react';
 import LetterGuessed from './components/letter-guessed/LetterGuessed';
-import LetterButton from './components/letter-button/LetterButton';
+import Keyboard from './components/keyboard/Keyboard';
 
 function App() {
-  let letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 
-                 'H', 'I', 'J', 'K', 'L', 'M', 'N', 
-                 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 
-                 'V', 'W', 'X', 'Y', 'Z'];
-
+  let [ltrToGuessState, setLtrToGuessState] = useState({});
   let wordToGuess = [...'TIGER'];
+
+  // const handleLetterGuessing = () => {
+  //   let 
+  // }
+
+  // setLtrToGuessState(
+  //   let newObj = {};
+  //   wordToGuess.map(letter => initObj[letter].guessed = false);
+  
+  // );
+
+
   
   return (
     <div className="App">
@@ -19,11 +28,7 @@ function App() {
           wordToGuess.map((letter, key) => <LetterGuessed key={key} letterHolded={letter} />)
         }
       </div>
-      <div className='letter-container'>
-        {
-          letters.map((letter, key) => <LetterButton key={key} letter={letter} word={wordToGuess} />)
-        }
-      </div>
+      <Keyboard wordToGuess={wordToGuess} />
     </div>
   );
 }
