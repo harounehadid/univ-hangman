@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import styles from './letterGuessed.module.css';
 import { Images } from "../resource-manager/ResourceManager";
 
