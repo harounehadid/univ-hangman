@@ -1,8 +1,8 @@
-import styles from './letterButton.module.css';
+import styles from './keyboardKey.module.css';
 import { useState } from 'react';
 import { Images } from "../resource-manager/ResourceManager";
 
-const LetterButton = props => {
+const KeyboardKey = props => {
     let { letter, word } = props;
 
     let [correctIndicator, setCorrectIndicator] = useState(false);
@@ -24,4 +24,4 @@ const LetterButton = props => {
     );
 }
 
-export default LetterButton;
+export default KeyboardKey;

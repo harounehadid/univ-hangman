@@ -1,4 +1,4 @@
-import LetterButton from "../letter-button/LetterButton";
+import KeyboardKey from "../keyboard-key/KeyboardKey";
 
 const Keyboard = props => {
     let { wordToGuess } = props;
@@ -20,7 +20,7 @@ const Keyboard = props => {
     return (
         <div style={styles}>
             {
-                letters.map((letter, key) => <LetterButton key={key} letter={letter} word={wordToGuess} />)
+                letters.map((letter, key) => <KeyboardKey key={key} letter={letter} word={wordToGuess} />)
             }
         </div>
     );
