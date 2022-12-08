@@ -1,4 +1,4 @@
-import './letterButton.css';
+import styles from './letterButton.module.css';
 import { useState } from 'react';
 import { Images } from "../resource-manager/ResourceManager";
 
@@ -16,10 +16,10 @@ const LetterButton = props => {
     }
 
     return (
-        <a onClick={handleClick} className='ltrBtn'>
+        <a onClick={handleClick} className={styles['main']}>
             <p>{letter}</p>
-            {correctIndicator && <img className='correct' src={Images.correctChoice} alt='' />}
-            {wrongIndicator && <img className='wrong' src={Images.wrongChoice} alt='' />}
+            {correctIndicator && <img className={styles['correct']} src={Images.correctChoice} alt='' />}
+            {wrongIndicator && <img className={styles['wrong']} src={Images.wrongChoice} alt='' />}
         </a>
     );
 }

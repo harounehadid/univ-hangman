@@ -1,4 +1,4 @@
-.ltrBtn {
+.main {
     position: relative;
     width: 12%;
     height: 60px;
@@ -8,14 +8,18 @@
     user-select: none;
 }
 
-.ltrBtn .correct {
+.correct {
     position: absolute;
-    bottom: 10%;
-    left: 1%;
+    width: 50px;
+    height: 50px;
+    bottom: 18%;
+    left: -8%;
 }
 
-.ltrBtn .wrong {
+.wrong {
     position: absolute;
-    bottom: 30%;
-    left: 18%;
+    width: 40px;
+    height: 40px;
+    bottom: 28%;
+    left: 2%;
 }
