@@ -8,31 +8,34 @@ const KeyboardKey = props => {
     let { letter, 
           word, 
           lettersToDisplay, 
-          setLettersToDisplay, 
-          resetGame } = props;
+          setLettersToDisplay } = props;
 
-    const resetGameState = useSelector(state => state.resetGame);
+    const manageGame = useSelector(state => state.manageGame);
     const dispatch = useDispatch();
 
+    let allowValueEdit = !manageGame.lost;
+
     useEffect(() => {
-        if (resetGameState.reset) {
+        allowValueEdit = !manageGame.lost;
+
+        if (manageGame.reset) {
             resetIndicators();
         }
-    }, [resetGameState.reset]);
+    }, [manageGame.reset, manageGame.lost]);
 
     let [correctIndicator, setCorrectIndicator] = useState(false);
     let [wrongIndicator, setWrongIndicator] = useState(false);
 
     const handleClick = () => {
         if (word.includes(letter)) {
-            if (!correctIndicator) {
+            if (!correctIndicator && allowValueEdit) {
                 if (lettersToDisplay.includes(letter) === false) setLettersToDisplay([...lettersToDisplay, letter]);
                 setCorrectIndicator(true);
             }
         }
         else {
             if (!wrongIndicator) {
-                dispatch(decrementCounter());
+                if (allowValueEdit) dispatch(decrementCounter());
                 setWrongIndicator(true);
             }
         }

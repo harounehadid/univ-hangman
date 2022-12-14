@@ -1,11 +1,13 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { onLost } from "../../store/gameManagementSlice";
 
 const Counter = props => {
-    const { setLost } = props;
-
     const counter = useSelector(state => state.counter);
+    const manageGame = useSelector(state => state.manageGame);
 
-    // if (counter.counter === 0) setLost(true);
+    const dispatch = useDispatch();
+
+    if (counter.counter === 0) dispatch(onLost());
 
     return (
         <>

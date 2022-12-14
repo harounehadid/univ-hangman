@@ -4,7 +4,7 @@ import Keyboard from './components/keyboard/Keyboard';
 import LetterGuessedContainer from './components/letter-guessed-container/LetterGuessedContainer';
 import Counter from './components/counter/Counter';
 import { useSelector, useDispatch } from 'react-redux';
-import { setResetGame } from './store/resetGameSlice';
+import { reset } from './store/gameManagementSlice';
 import Theme from './components/theme/Theme';
 
 function App() {
@@ -17,11 +17,13 @@ function App() {
 
   const reset = () => {
     setLettersToDisplay([]);
-    dispatch(setResetGame());
+    dispatch(reset());
   }
   
   return (
     <div className="App">
+      
+      {/* <img style={{width: '380px'}} src={require('./images/Group1.svg').default} alt='' /> */}
       <Counter setLost={setLost} />
       <Theme />
       <LetterGuessedContainer wordToGuess={wordToGuess} 
