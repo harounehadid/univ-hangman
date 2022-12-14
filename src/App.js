@@ -5,9 +5,9 @@ import LetterGuessedContainer from './components/letter-guessed-container/Letter
 import Counter from './components/counter/Counter';
 import { useSelector, useDispatch } from 'react-redux';
 import { setResetGame } from './store/resetGameSlice';
+import Theme from './components/theme/Theme';
 
 function App() {
-  const [theme, setTheme] = useState('animals');
   const [wordToGuess, setWordToGuess] = useState([...'TIGER']);
   const [lettersToDisplay, setLettersToDisplay] = useState([]);
   const [lost, setLost] = useState(false);
@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <Counter setLost={setLost} />
-      <p className='theme'>{theme}</p>
+      <Theme />
       <LetterGuessedContainer wordToGuess={wordToGuess} 
                               lettersToDisplay={lettersToDisplay}
                               />
